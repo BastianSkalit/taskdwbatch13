@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500&display=swap');
+
+.fontwhite {
+    font-family: 'Libre Baskerville', serif;
+    text-align: center;
+    color: #1D1D1D;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.subject {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: small;
+    color: rgba(0, 0, 0, 0.54);
+    padding-bottom: 20px;
+}
+
+.bg-color {
+    -webkit-box-shadow: -1px 32px 28px -32px rgba(0,0,0,0.39);
+    -moz-box-shadow: -1px 32px 28px -32px rgba(0,0,0,0.39);
+    box-shadow: -1px 32px 28px -32px rgba(0,0,0,0.39);
+}
+
+.youremail {
+    text-align: center;
+    font-size: small;
+    color: #1E1E1F;
+}
+
+.input {
+    width: 30%;
+    padding-left: 10px;
+}
+
+.btn-regis {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 70px;
+    margin-bottom: 70px;
+    padding: 8px 20px 8px 20px;
+    background-color: black;
+    font-weight: medium;
+    font-size: small;
+    color: white;
+}
+
+.signin {
+    font-size: small;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    color: #353537;
+    margin-bottom: 40px;
+}
+
+.termpriv {
+    font-size: small;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    color: #939396;
+    margin-bottom: 20px;
+}
+
+.register {
+    font-size: large;
+    font-family: 'Libre Baskerville', serif;
+    text-align: center;
+    color: #1D1D1D;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.menu-item {
+    padding:0 10px;
+    margin:5px 5px;
+    user-select: none;
+    cursor:pointer;
+    border: none;
+    font-size:13px;
+}
+
+.menu-item {
+    padding: 0 40px;
+    margin: 5px 10px;
+    user-select: none;
+    cursor: pointer;
+    border: none;
+  }
+  .menu-item-wrapper.active {
+    border: 1px blue solid;
+  }
+  .menu-item.active {
+    border: 1px green solid;
+  }
+   
+  .scroll-menu-arrow {
+    padding: 20px;
+    cursor: pointer;
+  }

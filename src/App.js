@@ -1,27 +1,27 @@
 import React, { Component } from "react";
-
-import Register from "./register";
-import Login from "./login";
-import Home from "./Home";
-
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
+import "./App.css";
+import LoginScreen from "./pages/Loginscreen";
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loginPage: [],
+      uploadScreen: []
+    };
+  }
+  componentWillMount() {
+    var loginPage = [];
+    loginPage.push(<LoginScreen appContext={this} key={"login-screen"} />);
+    this.setState({
+      loginPage: loginPage
+    });
+  }
   render() {
     return (
-      <Router>
-        <Switch>
-          <Route path="/">
-            <Home />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/register">
-            <Register />
-          </Route>
-        </Switch>
-      </Router>
+      <div className="App">
+        {this.state.loginPage}
+        {this.state.uploadScreen}
+      </div>
     );
   }
 }

@@ -1,26 +1,29 @@
 import React, { Component } from "react";
-import "./App.css";
-import LoginScreen from "./pages/Loginscreen";
+import Register from "./pages/Register";
+import Onezero from "./pages/Onezero";
+import Elemental from "./pages/Elemental";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./pages/Home";
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      loginPage: [],
-      uploadScreen: []
-    };
-  }
-  componentWillMount() {
-    var loginPage = [];
-    loginPage.push(<LoginScreen appContext={this} key={"login-screen"} />);
-    this.setState({
-      loginPage: loginPage
-    });
-  }
   render() {
     return (
-      <div className="App">
-        {this.state.loginPage}
-        {this.state.uploadScreen}
+      <div className="App-body">
+        <Router>
+          <Switch>
+            <Route path="/onezero">
+              <Onezero />
+            </Route>
+            <Route path="/elemental">
+              <Elemental />
+            </Route>
+            <Route path="/home">
+              <Home />
+            </Route>
+            <Route path="/">
+              <Register />
+            </Route>
+          </Switch>
+        </Router>
       </div>
     );
   }

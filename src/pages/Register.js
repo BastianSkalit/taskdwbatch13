@@ -1,143 +1,85 @@
 import React, { Component } from "react";
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import AppBar from "material-ui/AppBar";
-import RaisedButton from "material-ui/RaisedButton";
-import TextField from "material-ui/TextField";
-import axios from "axios";
 import Login from "./Login";
+import ButtonPrimary from "../components/ButtonPrimary";
+import ButtonClear from "../components/ButtonClear";
+import "../App.css";
+
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 class Register extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      first_name: "",
-      last_name: "",
-      email: "",
-      password: ""
-    };
-  }
-  componentWillReceiveProps(nextProps) {
-    console.log("nextProps", nextProps);
-  }
-  handleClick(event, role) {
-    var apiBaseUrl = "http://localhost:4000/api/";
-    // console.log("values in register handler",role);
-    var self = this;
-    //To be done:check for empty values before hitting submit
-    if (
-      this.state.first_name.length > 0 &&
-      this.state.last_name.length > 0 &&
-      this.state.email.length > 0 &&
-      this.state.password.length > 0
-    ) {
-      var payload = {
-        first_name: this.state.first_name,
-        last_name: this.state.last_name,
-        email: this.state.email,
-        password: this.state.password,
-        "Facebook, Gmail": role
-      };
-      axios
-        .post(apiBaseUrl + "/register", payload)
-        .then(function(response) {
-          console.log(response);
-          if (response.data.code === 200) {
-            //  console.log("registration successfull");
-            var loginscreen = [];
-            loginscreen.push(
-              <Login
-                parentContext={this}
-                appContext={self.props.appContext}
-                role={role}
-              />
-            );
-            var loginmessage = "Not Registered yet.Go to registration";
-            self.props.parentContext.setState({
-              loginscreen: loginscreen,
-              loginmessage: loginmessage,
-              buttonLabel: "Register",
-              isLogin: true
-            });
-          } else {
-            console.log("some error ocurred", response.data.code);
-          }
-        })
-        .catch(function(error) {
-          console.log(error);
-        });
-    } else {
-      alert("Input field value is missing");
-    }
-  }
   render() {
-    // console.log("props",this.props);
-    var userhintText, userLabel;
-    if (this.props.role === "Username") {
-      userhintText = "Enter your Username";
-      userLabel = "Username Id";
-    } else {
-      userhintText = "Enter your Email";
-      userLabel = "Email";
-    }
     return (
-      <div>
-        <MuiThemeProvider>
-          <div>
-            <AppBar title="Register" />
-            <TextField
-              hintText="Enter your Username"
-              floatingLabelText="Username"
-              onChange={(event, newValue) =>
-                this.setState({ first_name: newValue })
-              }
-            />
-            <br />
-            <TextField
-              hintText="Enter your First Name"
-              floatingLabelText="First Name"
-              onChange={(event, newValue) =>
-                this.setState({ first_name: newValue })
-              }
-            />
-            <br />
-            <TextField
-              hintText="Enter your Last Name"
-              floatingLabelText="Last Name"
-              onChange={(event, newValue) =>
-                this.setState({ last_name: newValue })
-              }
-            />
-            <br />
-            <TextField
-              hintText={userhintText}
-              floatingLabelText={userLabel}
-              onChange={(event, newValue) => this.setState({ email: newValue })}
-            />
-            <br />
-            <TextField
-              type="password"
-              hintText="Enter your Password"
-              floatingLabelText="Password"
-              onChange={(event, newValue) =>
-                this.setState({ password: newValue })
-              }
-            />
-            <br />
-            <RaisedButton
-              label="Submit"
-              primary={true}
-              style={style}
-              onClick={event => this.handleClick(event, this.props.role)}
-            />
-          </div>
-        </MuiThemeProvider>
+      <Router>
+        <div>
+          <Switch>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/">
+              <Content />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
+    );
+  }
+}
+
+class Content extends Component {
+  render() {
+    return (
+      <div className="App-content-register">
+        <h1 style={{ textSize: "10px" }}>Join Medium.</h1>
+        <h2 style={{ textSize: "10px" }}>
+          Create an account to receive great stories in your inbox, personalize
+          your homepage, and follow authors and topics that you love.
+        </h2>
+
+        <FormInput />
+
+        <div className="App-text-info">
+          <span style={{ textSize: "10px" }}>Already have an account?</span>
+          <Link to="/login" style={{ textDecoration: "none" }}>
+            <ButtonClear title="Sign in"></ButtonClear>
+          </Link>
+        </div>
+
+        <div className="App-text-info">
+          To make Medium work, we log user data and share it with service
+          providers. Click “Sign up” above to accept Medium’s
+          <span style={{ textDecoration: "underline" }}>
+            Terms of Service
+          </span>{" "}
+          &<span style={{ textDecoration: "underline" }}>Privacy Policy.</span>
+        </div>
       </div>
     );
   }
 }
 
-const style = {
-  margin: 15
-};
+class FormInput extends Component {
+  render() {
+    return (
+      <div className="App-form">
+        <div className="App-input-group">
+          <div className="input-label">Your username</div>
+          <input type="text" />
+        </div>
+
+        <div className="App-input-group">
+          <div className="input-label">Your password</div>
+          <input type="password" />
+        </div>
+
+        <div className="App-input-group">
+          <div className="input-label">Your email</div>
+          <input type="email" />
+        </div>
+
+        <ButtonPrimary title="Registration"></ButtonPrimary>
+      </div>
+    );
+  }
+}
 
 export default Register;

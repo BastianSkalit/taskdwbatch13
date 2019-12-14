@@ -67,13 +67,13 @@ class FormInput extends Component {
         </div>
 
         <div className="App-input-group">
-          <div className="input-label">Your password</div>
-          <input type="password" />
+          <div className="input-label">Your email</div>
+          <input type="email" />
         </div>
 
         <div className="App-input-group">
-          <div className="input-label">Your email</div>
-          <input type="email" />
+          <div className="input-label">Your password</div>
+          <input type="password" />
         </div>
 
         <ButtonPrimary title="Registration"></ButtonPrimary>

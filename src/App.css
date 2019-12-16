@@ -1,178 +1,288 @@
-h1 {
-  font-family: "noeDisplay";
-  font-weight: normal;
-  font-size: 32px;
-  font-weight: 400;
-  color: rgba(0, 0, 0, 0.76);
-}
-
-h2 {
-  font-size: 19px;
-  color: rgba(0, 0, 0, 0.76);
-  font-weight: normal;
-  text-align: center;
-  width: 30%;
-  margin-top: 5px;
-}
-
 .App {
   text-align: center;
 }
 
-.App-body {
-  background-color: white;
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+.add-comment {
+  border: none;
+  outline: none;
+  resize: none;
+  background: none;
+  font-family: "Poppins" !important;
+  font-size: 17px;
+  width: 100% !important;
+  display: block;
+}
+.menu-item {
+  padding: 0 40px;
+  margin: 5px 10px;
+  user-select: none;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  font-family: "Frank Ruhl Libre";
+}
+.menu-item-wrapper.active {
+  background-color: #4b4a4a;
+  color: #fff;
+  outline: none;
+}
+.menu-item.active {
+  background-color: #4b4a4a;
+  color: #fff;
+  outline: none;
+}
+
+.scroll-menu-arrow {
+  padding: 20px;
+  cursor: pointer;
+}
+.article-list {
+  margin-bottom: 20px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.container-app2 {
+  width: 70%;
+  margin: auto;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
-
-.App-header-div {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: flex-end;
+.divider1 {
+  width: 80%;
+  margin: auto;
 }
-
-.App-header-div div {
-  margin: 10px;
+.App-link {
+  color: #61dafb;
 }
-
-.App-content-register {
-  width: 100vw;
-  height: 100vh;
+.p-3 {
+  padding: 25px 0;
 }
-
-.App-content-login {
-  width: 80vw;
-  height: 90vh;
+.card-img {
+  height: 60vh;
 }
-
-.App-content-register,
-.App-content-login {
-  font-family: Sans-Serif;
-  font-weight: 700;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+.container-app {
+  width: 80%;
+  margin: auto;
 }
-
-.App-content-register {
-  background-image: url("https://cdn-images-1.medium.com/max/900/1*gnUBeL-INIVDk0_GyL8x1g.png");
-  background-repeat: no-repeat;
-  background-size: 100% 80%;
-  text-justify: auto;
+.popular-img {
+  background-image: url("https://source.unsplash.com/random");
+  background-size: cover;
+  height: 160px;
+  background-position: center;
 }
-.App-content-login {
-  background-image: url("https://cdn-images-1.medium.com/max/900/1*gnUBeL-INIVDk0_GyL8x1g.png");
-  background-repeat: no-repeat;
-  background-size: 100% 80%;
-  text-justify: auto;
+.popular-img-1 {
+  background-image: url("https://source.unsplash.com/random");
+  background-size: cover;
+  height: 100px;
+  background-position: center;
 }
-
-.App-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.popular-img-2 {
+  background-image: url("https://source.unsplash.com/random");
+  background-size: cover;
+  height: 140px;
+  background-position: center;
 }
-
-.App-text-info {
-  font-size: 10px;
-  color: rgba(0, 0, 0, 0.76);
-  font-weight: normal;
+.popular-img-2 {
+  background-image: url("https://source.unsplash.com/random");
+  background-size: cover;
+  height: 160px;
+  background-position: center;
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.art-app {
+  display: block;
+}
+.avatar-profile {
+  width: 120px !important;
+  height: 120px !important;
+  font-size: 60px !important;
+  background-color: rgb(46, 125, 50) !important;
+}
+@media only screen and (max-width: 480px) {
+  .card-img {
+    height: 25vh;
+  }
+  .popular-article {
+    display: none;
+  }
+  .container-app {
+    width: 100%;
+  }
+  .text-title {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .card-img {
+    height: 25vh;
+  }
+  .container-app {
+    width: 90%;
+  }
+  .popular-article .popular-img {
+    height: 300px;
+  }
+  .text-title {
+    font-size: 16px;
+  }
+}
+.text-title {
   text-align: center;
-  width: 25%;
-  height: 40%;
+  font-size: 26px !important;
 }
-
-.App-form input {
-  margin-top: 25px;
-}
-
-.App-form button {
-  margin-top: 25px;
-}
-
-.App-input-group {
-  text-align: center;
-  color: rgba(0, 0, 0, 0.54);
-}
-
-.App-input-group input {
-  border: 0px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.54);
-  padding-top: 5px;
-  width: 350px;
-}
-
-.App-input-group .input-label {
-  margin-top: 20px;
-  margin-bottom: 0px;
-  font-weight: normal;
-}
-
-.App-arrow-back-text {
+.bg-article {
+  background-image: url("https://source.unsplash.com/random");
+  height: 354px;
+  background-size: cover;
   display: flex;
-  align-items: center;
-}
-
-.App-arrow-back-text span {
-  font-size: 30px;
-  font-weight: normal;
-  margin-right: 10px;
-}
-
-.App-category {
-  display: flex;
-  align-items: center;
   justify-content: center;
-  z-index: 500;
-  width: 100%;
-  font-size: 16px;
-  font-family: sans-serif;
-  letter-spacing: 0;
-  font-weight: 400;
-  font-style: normal;
-  background-color: #fff;
-  color: rgba(0, 0, 0, 0.54);
-}
-
-.App-category div {
-  margin: 15px;
-}
-
-input:focus {
-  outline: none;
-  border-bottom: 2px solid black;
-}
-
-.container {
-  width: 400px;
-  height: 200px;
+  align-items: center;
   padding: 20px;
-  background: white;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-top: -120px;
-  margin-left: -220px;
 }
-
-.box {
-  display: table-cell;
+.bg-article1 {
+  background-image: url("https://source.unsplash.com/random");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  height: 300px;
+}
+.content-article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 354px;
   text-align: center;
-  vertical-align: middle;
-
-  background: white;
-  border: 50px solid rgba(0, 0, 0, 0.2);
+  padding: 20px;
 }
-
-@font-face {
-  font-family: "noeDisplay";
-  src: url("https://glyph.medium.com/font/b6752aa/0-3j_4g_6bu_6c4_6c8_6c9_6cc_6cd_6ci_6cm/noe-display-500-normal.woff")
-    format("woff");
+.content-article3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+.content-article2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 354px;
+  text-align: center;
+  padding: 20px;
+}
+.content-article1 {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 354px;
+  text-align: center;
+  padding: 20px;
+}
+.title1 {
+  font-size: 28px !important;
+  color: #000;
+}
+.title2 {
+  font-size: 17px !important;
+  color: #000;
+  margin-top: 20px !important;
+  margin-bottom: 30px !important;
+}
+.author-article {
+  margin-top: 40px;
+}
+.information1 {
+  display: none;
+}
+.bg-comment {
+  background-color: rgb(238, 235, 235) !important;
+  display: block;
+}
+.related-img {
+  background-image: url("https://source.unsplash.com/random");
+  background-size: cover;
+  height: 300px;
+  background-position: center;
+  margin: 8px 0;
+}
+@media only screen and (max-width: 780px) {
+  .container-app {
+    width: 90%;
+  }
+  .art-app {
+    display: none;
+  }
+  .container-app2 {
+    width: 90%;
+  }
+  .information {
+    display: none;
+  }
+  .popular-article {
+    display: none;
+  }
+  .information1 {
+    display: block;
+    margin-top: 20px;
+  }
+  .MuiTypography-h6 {
+    font-size: 14px !important;
+  }
+  .content-article1 {
+    display: flex;
+    height: 120px;
+  }
+  .content-article {
+    display: none;
+  }
+  .content-article3 {
+    height: 150px !important;
+  }
+  .text-title {
+    font-size: 26px !important;
+  }
+  .title1 {
+    font-size: 24px !important;
+  }
+  .title2 {
+    margin-top: 10px !important;
+    font-weight: 300 !important;
+    margin-bottom: 20px !important;
+  }
+  .author-article {
+    margin-top: 20px !important;
+  }
+  .name-category {
+    font-size: 70px !important;
+  }
+  .content-article2 {
+    height: 160px !important;
+  }
 }
